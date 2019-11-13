@@ -182,6 +182,8 @@ def checkout(cart, coupons)
     final_discount = (cart_total * 0.9).round(2)
     return final_discount
   else
+    puts "cart total before return:"
+    puts cart_total
     return cart_total
   end
 
