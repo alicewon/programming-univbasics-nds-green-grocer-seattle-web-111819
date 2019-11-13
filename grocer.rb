@@ -157,12 +157,17 @@ def checkout(cart, coupons)
 
   cart_consolidated = consolidate_cart(cart)
 
-  puts "consolidate_cart"
+  puts "consolidate_cart result:"
   puts cart_consolidated
 
   coupons_consolidated_cart = apply_coupons(cart_consolidated, coupons)
-  cheapest_cart = apply_clearance(coupons_consolidated_cart)
 
+  puts "apply_coupons result:"
+  puts coupons_consolidated_cart
+
+  cheapest_cart = apply_clearance(coupons_consolidated_cart)
+  puts "apply_clearance result:"
+  puts cheapest_cart
 
 
   cart_total = 0
