@@ -100,7 +100,8 @@ def consolidate_cart(cart)
       while j<cart.length do
         if coupons[i][:item] == cart[j][:item] && cart[j][:count] >= coupons[i][:num]
           coupon_applied_cart<< update_coupon_item_hash(cart[j], coupons[i])
-          coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
+          # coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
+          coupon_applied_cart << abs(cart[j][:count] -= coupons[i][:num])
         else
           coupon_applied_cart<<cart[j]
         end
