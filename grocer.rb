@@ -101,9 +101,6 @@ def consolidate_cart(cart)
           cart << update_coupon_item_hash(cart[j], coupons[i])
           cart[j][:count] = cart[j][:count] - coupon[i][:num]
           # coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
-
-        else
-          cart<<cart[j]
         end
         j +=1
       end
