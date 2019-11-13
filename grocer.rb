@@ -104,6 +104,7 @@ def consolidate_cart(cart)
           coupons.pop(i)
         else
           coupon_applied_cart<<cart[j]
+          coupons.pop(i)
         end
         j +=1
       end
