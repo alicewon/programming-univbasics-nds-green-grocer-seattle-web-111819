@@ -297,7 +297,7 @@ describe "Grocer" do
         beer = find_item_by_name_in_collection('BEER', items)
         cart = [beer, beer, beer]
         beer_coupon = coupons[1]
-        coupons = [beer_coupon]
+        coupons = [beer_coupon, beer_coupon]
         expect(checkout(cart, coupons)).to eq(33.00)
       end
     end
