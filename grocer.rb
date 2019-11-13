@@ -103,7 +103,7 @@ def consolidate_cart(cart)
           # coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
 
         else
-          coupon_applied_cart<<cart[j]
+          cart<<cart[j]
         end
         j +=1
       end
