@@ -92,26 +92,25 @@ def consolidate_cart(cart)
       return cart
     end
 
-    coupon_applied_cart = []
 
     i=0
     while i<coupons.length do
       j=0
       while j<cart.length do
         if coupons[i][:item] == cart[j][:item] && cart[j][:count] >= coupons[i][:num]
-          coupon_applied_cart<< update_coupon_item_hash(cart[j], coupons[i])
-          coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
-          coupons.pop(i)
-        else
-          coupon_applied_cart<<cart[j]
-          coupons.pop(i)
+          cart << update_coupon_item_hash(cart[j], coupons[i])
+          cart[j][:count] = cart[j][:count] - coupon[i][:num]
+          # coupon_applied_cart<< update_original_cart_item_count(cart[j],coupons[i])
+
+        #else
+          #coupon_applied_cart<<cart[j]
         end
         j +=1
       end
       i +=1
     end
 
-    return coupon_applied_cart
+    return cart
   end
 
 
